@@ -7,7 +7,7 @@ import json
 
 # Defintions
 def beautify_json(match):
-    return f"{match['material_number']}: {match['description']} (Score: {match['percent']})"
+    return f"{match['material_number']}: {match['description']} (Score: {match['percent']}%)"
 
 def get_matches(query):
     queries = [query]
@@ -34,7 +34,7 @@ st.markdown(
 search_engine = SemanticSearch(data_file='materials.json')
 
 st.subheader('Search')
-search_query = st.text_input("Find matching inventory items", placeholder="Enter description of material or service")
+search_query = st.text_input("Key in description to find matching inventory items:", placeholder="")
 
 # Filter results based on search query
 if search_query:
@@ -42,7 +42,7 @@ if search_query:
     st.text("Results:")
     for match in matches:
         st.text(beautify_json(match))
-
+    st.markdown("*Result is ranked based on closest match with highest score listed on top.*")
 st.write("\n")
 st.divider()
 st.subheader('Batch Processing')
