@@ -40,8 +40,8 @@ st.markdown(
 
 search_engine = load_search_engine()
 
-st.subheader('Search')
-search_query = st.text_input("Key in description to find matching inventory items:", placeholder="")
+st.subheader('Cognitive Search')
+search_query = st.text_input("", placeholder="Enter a description to find matching inventory items")
 
 # Filter results based on search query
 if search_query:
@@ -54,10 +54,11 @@ st.write("\n")
 st.divider()
 
 # Batch processing via file upload
-st.subheader('Batch Processing')
+st.subheader('Excel Wizard')
+st.text("Upload an Excel file to bulk search for inventory items, following the steps below:")
 st.write("&nbsp;")
-st.markdown("##### Step 1: Upload an Excel file")
-st.markdown("The excel file should contain a column header labelled as `description`")
+st.markdown("##### Step 1: Upload file")
+st.markdown("Excel file should contain a column header labelled as `description`")
 uploaded_file = st.file_uploader("",type=["xlsx"])
 if uploaded_file:
     try:
@@ -92,7 +93,7 @@ if uploaded_file:
 
             with col2:
                 # Display the matches and let the user select one
-                selection = st.selectbox("",
+                selection = st.selectbox("&nbsp;",
                     matches,
                     index=None,
                     placeholder="Select best match",
