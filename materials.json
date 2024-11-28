@@ -386,5 +386,9 @@
     {
         "material_number": "90000000-0097",
         "description": "Film production equipment"
+    },
+    {
+        "material_number": "90000000-0097",
+        "description": "CNB Film production equipment"
     }
 ]

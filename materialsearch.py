@@ -5,7 +5,7 @@ import json
 
 # Load data and model
 class SemanticSearch:
-    def __init__(self, data_file, model_name='all-MiniLM-L6-v2'):
+    def __init__(self, data_file='materials.json', model_name='all-MiniLM-L6-v2'):
         self.data = self._load_data(data_file)
         self.model = SentenceTransformer(model_name)
         self.embeddings = self._generate_embeddings()

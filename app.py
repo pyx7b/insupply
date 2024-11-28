@@ -16,6 +16,12 @@ def get_matches(query):
     query = results['query']
     return results['matches']
 
+# add caching of model
+@st.cache_resource
+def load_search_engine():
+    # Initialize the search engine and return it
+    return SemanticSearch()
+
 # Main App
 st.set_page_config(page_title="Material Matcher", page_icon=":guardsman:")
 
@@ -31,7 +37,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-search_engine = SemanticSearch(data_file='materials.json')
+search_engine = load_search_engine()
 
 st.subheader('Search')
 search_query = st.text_input("Key in description to find matching inventory items:", placeholder="")
