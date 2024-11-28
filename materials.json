@@ -1,0 +1,390 @@
+[
+    {
+        "material_number": "90000000-0001",
+        "description": "Fertilizers and soil conditioners"
+    },
+    {
+        "material_number": "90000000-0002",
+        "description": "Agricultural machinery"
+    },
+    {
+        "material_number": "90000000-0003",
+        "description": "Pesticides and herbicides"
+    },
+    {
+        "material_number": "90000000-0004",
+        "description": "Cereal grains and seeds"
+    },
+    {
+        "material_number": "90000000-0005",
+        "description": "Fresh vegetables"
+    },
+    {
+        "material_number": "90000000-0006",
+        "description": "Dairy products"
+    },
+    {
+        "material_number": "90000000-0007",
+        "description": "Livestock"
+    },
+    {
+        "material_number": "90000000-0008",
+        "description": "Poultry and eggs"
+    },
+    {
+        "material_number": "90000000-0009",
+        "description": "Fish and seafood"
+    },
+    {
+        "material_number": "90000000-0010",
+        "description": "Processed foods"
+    },
+    {
+        "material_number": "90000000-0011",
+        "description": "Beverages"
+    },
+    {
+        "material_number": "90000000-0012",
+        "description": "Bakery products"
+    },
+    {
+        "material_number": "90000000-0013",
+        "description": "Textiles and fabrics"
+    },
+    {
+        "material_number": "90000000-0014",
+        "description": "Clothing and footwear"
+    },
+    {
+        "material_number": "90000000-0015",
+        "description": "Building materials"
+    },
+    {
+        "material_number": "90000000-0016",
+        "description": "Electrical equipment"
+    },
+    {
+        "material_number": "90000000-0017",
+        "description": "Industrial machinery"
+    },
+    {
+        "material_number": "90000000-0018",
+        "description": "Medical equipment"
+    },
+    {
+        "material_number": "90000000-0019",
+        "description": "Pharmaceuticals"
+    },
+    {
+        "material_number": "90000000-0020",
+        "description": "Laboratory supplies"
+    },
+    {
+        "material_number": "90000000-0021",
+        "description": "Office supplies"
+    },
+    {
+        "material_number": "90000000-0022",
+        "description": "Computer hardware"
+    },
+    {
+        "material_number": "90000000-0023",
+        "description": "Computer software"
+    },
+    {
+        "material_number": "90000000-0024",
+        "description": "Telecommunications equipment"
+    },
+    {
+        "material_number": "90000000-0025",
+        "description": "Automobiles and parts"
+    },
+    {
+        "material_number": "90000000-0026",
+        "description": "Aerospace equipment"
+    },
+    {
+        "material_number": "90000000-0027",
+        "description": "Maritime equipment"
+    },
+    {
+        "material_number": "90000000-0028",
+        "description": "Railway equipment"
+    },
+    {
+        "material_number": "90000000-0029",
+        "description": "Sporting goods"
+    },
+    {
+        "material_number": "90000000-0030",
+        "description": "Toys and games"
+    },
+    {
+        "material_number": "90000000-0031",
+        "description": "Furniture and furnishings"
+    },
+    {
+        "material_number": "90000000-0032",
+        "description": "Cleaning supplies"
+    },
+    {
+        "material_number": "90000000-0033",
+        "description": "Security equipment"
+    },
+    {
+        "material_number": "90000000-0034",
+        "description": "Fire protection equipment"
+    },
+    {
+        "material_number": "90000000-0035",
+        "description": "Tools and tool accessories"
+    },
+    {
+        "material_number": "90000000-0036",
+        "description": "Paints and coatings"
+    },
+    {
+        "material_number": "90000000-0037",
+        "description": "Adhesives and sealants"
+    },
+    {
+        "material_number": "90000000-0038",
+        "description": "Lubricants and oils"
+    },
+    {
+        "material_number": "90000000-0039",
+        "description": "Plastics and resins"
+    },
+    {
+        "material_number": "90000000-0040",
+        "description": "Paper and packaging materials"
+    },
+    {
+        "material_number": "90000000-0041",
+        "description": "Metals and alloys"
+    },
+    {
+        "material_number": "90000000-0042",
+        "description": "Mining equipment"
+    },
+    {
+        "material_number": "90000000-0043",
+        "description": "Petroleum products"
+    },
+    {
+        "material_number": "90000000-0044",
+        "description": "Renewable energy equipment"
+    },
+    {
+        "material_number": "90000000-0045",
+        "description": "Waste management equipment"
+    },
+    {
+        "material_number": "90000000-0046",
+        "description": "Water treatment equipment"
+    },
+    {
+        "material_number": "90000000-0047",
+        "description": "HVAC equipment"
+    },
+    {
+        "material_number": "90000000-0048",
+        "description": "Electrical cables"
+    },
+    {
+        "material_number": "90000000-0049",
+        "description": "Lighting equipment"
+    },
+    {
+        "material_number": "90000000-0050",
+        "description": "Batteries and power supplies"
+    },
+    {
+        "material_number": "90000000-0051",
+        "description": "Solar panels"
+    },
+    {
+        "material_number": "90000000-0052",
+        "description": "Wind turbines"
+    },
+    {
+        "material_number": "90000000-0053",
+        "description": "Construction machinery"
+    },
+    {
+        "material_number": "90000000-0054",
+        "description": "Heavy-duty vehicles"
+    },
+    {
+        "material_number": "90000000-0055",
+        "description": "Healthcare services"
+    },
+    {
+        "material_number": "90000000-0056",
+        "description": "Educational services"
+    },
+    {
+        "material_number": "90000000-0057",
+        "description": "Consulting services"
+    },
+    {
+        "material_number": "90000000-0058",
+        "description": "Legal services"
+    },
+    {
+        "material_number": "90000000-0059",
+        "description": "Financial services"
+    },
+    {
+        "material_number": "90000000-0060",
+        "description": "Insurance services"
+    },
+    {
+        "material_number": "90000000-0061",
+        "description": "Advertising services"
+    },
+    {
+        "material_number": "90000000-0062",
+        "description": "Market research services"
+    },
+    {
+        "material_number": "90000000-0063",
+        "description": "Event management services"
+    },
+    {
+        "material_number": "90000000-0064",
+        "description": "Catering services"
+    },
+    {
+        "material_number": "90000000-0065",
+        "description": "Tourism and travel services"
+    },
+    {
+        "material_number": "90000000-0066",
+        "description": "Transportation services"
+    },
+    {
+        "material_number": "90000000-0067",
+        "description": "Logistics services"
+    },
+    {
+        "material_number": "90000000-0068",
+        "description": "Real estate services"
+    },
+    {
+        "material_number": "90000000-0069",
+        "description": "Property management services"
+    },
+    {
+        "material_number": "90000000-0070",
+        "description": "Environmental services"
+    },
+    {
+        "material_number": "90000000-0071",
+        "description": "Engineering services"
+    },
+    {
+        "material_number": "90000000-0072",
+        "description": "Architectural services"
+    },
+    {
+        "material_number": "90000000-0073",
+        "description": "IT consulting services"
+    },
+    {
+        "material_number": "90000000-0074",
+        "description": "Software development services"
+    },
+    {
+        "material_number": "90000000-0075",
+        "description": "Web hosting services"
+    },
+    {
+        "material_number": "90000000-0076",
+        "description": "Cloud computing services"
+    },
+    {
+        "material_number": "90000000-0077",
+        "description": "Cybersecurity services"
+    },
+    {
+        "material_number": "90000000-0078",
+        "description": "Data analytics services"
+    },
+    {
+        "material_number": "90000000-0079",
+        "description": "Artificial intelligence services"
+    },
+    {
+        "material_number": "90000000-0080",
+        "description": "Machine learning services"
+    },
+    {
+        "material_number": "90000000-0081",
+        "description": "Robotics and automation services"
+    },
+    {
+        "material_number": "90000000-0082",
+        "description": "3D printing services"
+    },
+    {
+        "material_number": "90000000-0083",
+        "description": "Drone services"
+    },
+    {
+        "material_number": "90000000-0084",
+        "description": "Satellite communication services"
+    },
+    {
+        "material_number": "90000000-0085",
+        "description": "Space exploration equipment"
+    },
+    {
+        "material_number": "90000000-0086",
+        "description": "Military equipment"
+    },
+    {
+        "material_number": "90000000-0087",
+        "description": "Ammunition"
+    },
+    {
+        "material_number": "90000000-0088",
+        "description": "Rescue equipment"
+    },
+    {
+        "material_number": "90000000-0089",
+        "description": "Emergency response equipment"
+    },
+    {
+        "material_number": "90000000-0090",
+        "description": "Shelters and housing"
+    },
+    {
+        "material_number": "90000000-0091",
+        "description": "Food rations"
+    },
+    {
+        "material_number": "90000000-0092",
+        "description": "Water supplies"
+    },
+    {
+        "material_number": "90000000-0093",
+        "description": "Educational textbooks"
+    },
+    {
+        "material_number": "90000000-0094",
+        "description": "Library books"
+    },
+    {
+        "material_number": "90000000-0095",
+        "description": "Art supplies"
+    },
+    {
+        "material_number": "90000000-0096",
+        "description": "Musical instruments"
+    },
+    {
+        "material_number": "90000000-0097",
+        "description": "Film production equipment"
+    }
+]
