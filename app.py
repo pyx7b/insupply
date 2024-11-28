@@ -20,7 +20,7 @@ def get_matches(query):
 @st.cache_resource
 def load_search_engine():
     # Initialize the search engine and return it
-    return SemanticSearch()
+    return SemanticSearch(data_file='materials.json')
 
 # Main App
 st.set_page_config(page_title="Material Matcher", page_icon=":guardsman:")
