@@ -20,7 +20,8 @@ def get_matches(query):
 @st.cache_resource
 def load_search_engine():
     # Initialize the search engine and return it
-    return SemanticSearch(data_file='materials.json')
+    # supported models: 'sentence_transformer' and 'bert'. Noted that bert performs poorly, code commented out, need a spike.
+    return SemanticSearch(data_file='materials.json',model_type='sentence_transformer')
 
 # Main App
 st.set_page_config(page_title="Material Matcher", page_icon=":guardsman:")
@@ -48,7 +49,7 @@ if search_query:
     st.text("Results:")
     for match in matches:
         st.text(beautify_json(match))
-    st.markdown("*Result is ranked based on closest match with highest score listed on top.*")
+    st.markdown("*Results are ranked based on closest match with highest score listed on top.*")
 st.write("\n")
 st.divider()
 st.subheader('Batch Processing')
@@ -57,10 +58,13 @@ st.markdown("##### Step 1: Upload an Excel file")
 uploaded_file = st.file_uploader("",type=["xlsx"])
 
 if uploaded_file:
-    # Load the Excel file into a Pandas DataFrame
-    df = pd.read_excel(uploaded_file)
-    # Add Material ID Column
-    df['Material ID'] = None
+
+    # Show spinner while loading the file
+    with st.spinner('Loading Excel file...'):
+        # Load the Excel file into a Pandas DataFrame
+        df = pd.read_excel(uploaded_file)
+        # Add Material ID Column
+        df['Material ID'] = None
 
     st.write("&nbsp;")
     st.markdown("##### Step 2: Select material or service number")
