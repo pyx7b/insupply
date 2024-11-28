@@ -5,6 +5,7 @@ from materialsearch import SemanticSearch
 import json
 
 
+# Defintions
 def beautify_json(match):
     return f"{match['material_number']}: {match['description']} (Score: {match['percent']})"
 
@@ -15,13 +16,25 @@ def get_matches(query):
     query = results['query']
     return results['matches']
 
+# Main App
 st.set_page_config(page_title="Material Matcher", page_icon=":guardsman:")
 
+# Custom CSS to remove the label and its space
+st.markdown(
+    """
+    <style>
+    .stSelectbox label {
+        display: none;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 search_engine = SemanticSearch(data_file='materials.json')
 
 st.subheader('Search')
-search_query = st.text_input("Enter descsription")
+search_query = st.text_input("Find matching inventory items", placeholder="Enter description of material or service")
 
 # Filter results based on search query
 if search_query:
@@ -34,7 +47,7 @@ st.write("\n")
 st.divider()
 st.subheader('Batch Processing')
 st.write("&nbsp;")
-st.markdown("**Step 1:** Upload an Excel file")
+st.markdown("##### Step 1: Upload an Excel file")
 uploaded_file = st.file_uploader("",type=["xlsx"])
 
 if uploaded_file:
@@ -44,14 +57,13 @@ if uploaded_file:
     df['Material ID'] = None
 
     st.write("&nbsp;")
-    st.markdown("**Step 2:** Select material or service number")
+    st.markdown("##### Step 2: Select material or service number")
     # Loop through each row in dataframe
     for index, row in df.iterrows():
         matches = get_matches(row['Description']) 
         #print output in columns
         col1, col2 = st.columns([1,3])
         with col1:
-            st.write("&nbsp;")
             st.text(row['Description'])
 
         with col2:
@@ -68,7 +80,7 @@ if uploaded_file:
 
     # Display editable dataframe
     st.write("&nbsp;")
-    st.markdown("**Step 3:** Review output")
+    st.markdown("##### Step 3: Review output")
     st.write("&nbsp;")
     edited_df = st.data_editor(df, num_rows="dynamic")
 
