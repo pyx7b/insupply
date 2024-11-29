@@ -36,16 +36,15 @@ if "max_search" not in st.session_state:
 
 with tab1:
     st.subheader('Cognitive Search')    
-    st.write("\n")
-    search_query = st.text_input("Enter a description to find matching inventory items", placeholder="Enter a description to find matching inventory items", label_visibility="collapsed")
+    st.write("Find matching inventory items with text search:")
+    search_query = st.text_input("Enter description", placeholder="Enter description", label_visibility="collapsed")
 
     # Filter results based on search query
     if search_query:
         matches = get_matches(search_query,st.session_state.max_search)
-        st.text("Results:")
+        st.write("Results based on rank order:")
         for match in matches:
             st.text(beautify_json(match))
-        st.markdown("*Results are ranked based on closest match with highest score listed on top.*")
     st.write("\n")
 
         
