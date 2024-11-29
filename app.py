@@ -7,7 +7,7 @@ import json
 
 # Defintions
 def beautify_json(match):
-    return f"{match['material_number']}: {match['description']} (Score: {match['percent']}%)"
+    return f"{match['material_number']}: {match['description']} (Score: {match['score']}%)"
 
 def get_matches(query,max_search):
     queries = [query]
@@ -16,15 +16,15 @@ def get_matches(query,max_search):
     query = results['query']
     return results['matches']
 
-def update_max_search(value):
-    st.session_state.max_search = value
-
 # add caching of model
 @st.cache_resource
 def load_search_engine():
     # Initialize the search engine and return it
     # supported models: 'sentence_transformer' and 'bert'. Noted that bert performs poorly, code commented out, need a spike.
     return SemanticSearch(data_file='materials.json',model_type='sentence_transformer')
+
+def update_max_search(value):
+    st.session_state.max_search = value
 
 # Main App
 st.set_page_config(page_title="Material Matcher", page_icon=":guardsman:")
@@ -36,15 +36,17 @@ if "max_search" not in st.session_state:
 
 with tab1:
     st.subheader('Cognitive Search')    
-    st.write("Find matching inventory items with text search:")
+    st.write("Find similiar inventory items with text search:")
     search_query = st.text_input("Enter description", placeholder="Enter description", label_visibility="collapsed")
 
     # Filter results based on search query
     if search_query:
         matches = get_matches(search_query,st.session_state.max_search)
-        st.write("Results based on rank order:")
-        for match in matches:
-            st.text(beautify_json(match))
+        st.write(f"Top {st.session_state.max_search} results based on proximity score:")
+        matches_df = pd.DataFrame(matches)
+        matches_df.index = matches_df.index + 1 # set index to start from 1
+        matches_df['score'] = matches_df['score'].apply(lambda x: f'{x}%')
+        st.dataframe(matches_df, use_container_width=True)
     st.write("\n")
 
         
@@ -75,7 +77,7 @@ with tab2:
                 st.error(f"❌ Error: The uploaded file is missing required columns: {', '.join(missing_columns)}")
                 st.stop()  # Halts further execution
             # Add Material ID Column
-            df['material_id'] = None
+            df.insert(1, 'material_number', None)
 
             st.write("\n")
             st.markdown("##### Step 2: Select material or service number")
@@ -98,7 +100,7 @@ with tab2:
                         label_visibility="collapsed"
                     )
                 if selection:
-                    df.at[index, 'material_id'] = selection['material_number']
+                    df.at[index, 'material_number'] = selection['material_number']
                 
 
             
@@ -106,7 +108,7 @@ with tab2:
             st.write("\n")
             st.markdown("##### Step 3: Review output")
             st.write("\n")
-            edited_df = st.data_editor(df, num_rows="dynamic")
+            edited_df = st.data_editor(df, num_rows="dynamic", use_container_width=True)
             # Write to excel object
             output = BytesIO()
             with pd.ExcelWriter(output, engine="openpyxl") as writer:
@@ -129,5 +131,5 @@ with tab2:
 
 with tab3:
     st.write("\n")
-    new_max_search  = st.slider("Maximum search results", min_value=1, max_value=20, value=5)
+    new_max_search  = st.slider("Maximum search results", min_value=1, max_value=50, value=5)
     update_max_search(new_max_search)

@@ -53,7 +53,7 @@ class SemanticSearch:
     
     def _cosine_similarity_to_percentage(self, cosine_similarity):
         """Convert cosine similarity score to a percentage (0-100%)."""
-        return round(((1-cosine_similarity) * 100),2)
+        return ((1-cosine_similarity) * 100)
 
     def search(self, queries, top_k=5):
         """Perform semantic search for a list of queries."""
@@ -71,8 +71,8 @@ class SemanticSearch:
                 {
                     "material_number": self.data[idx]['material_number'],
                     "description": self.data[idx]['description'],
-                    "score": 1 - distances[i, idx],  # Cosine similarity (1 - distance)
-                    "percent": self._cosine_similarity_to_percentage(distances[i, idx])
+                   # "score": 1 - distances[i, idx],  # Cosine similarity (1 - distance)
+                    "score": round(self._cosine_similarity_to_percentage(distances[i, idx]),2)
                 }
                 for idx in ranked_indices
             ]
