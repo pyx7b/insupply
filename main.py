@@ -176,6 +176,12 @@ def main_page():
         st.write("\n")
 
     with tab3:
-        title_menu('','but_logout_settings')
+        title_menu('Your Preferences','but_logout_settings')
         new_max_search  = st.slider("Maximum search results", min_value=1, max_value=50, value=5)
         update_max_search(new_max_search)
+        st.write("\n")
+        st.write("\n")
+        st.write("\n")
+        with st.container(border=True):
+            st.markdown("##### Questions? Ideas? Random Thoughts? We’re Listening!")
+            st.markdown("Got a question or an idea that’s absolutely genius? We bet you do! Send us an [email](mailto:insupply@htx.ht.gov.sg), and we’ll get back to you as soon as we finish our coffee &#9749;", unsafe_allow_html=True)
