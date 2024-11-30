@@ -1,5 +1,5 @@
-# Material Matcher
-A Streamlit app with semantic search
+# In Supply
+A Streamlit app with semantic search. In Supply stands for intelligent supply, also meant tracking what is in supply.
 
 ## Installation steps
 
@@ -33,8 +33,8 @@ streamlit run app.py
 
 ## Run locally in Docker
 ```
-docker build -t materialmaster .
-docker run -p 8501:8501 materialmaster
+docker build -t insupply .
+docker run -p 8501:8501 insupply
 ```
 
 ## About the App
