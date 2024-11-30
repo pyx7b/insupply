@@ -1,9 +1,9 @@
 import streamlit as st
+
+st.set_page_config(page_title="In Supply", page_icon="📦") #need to set config before import other modules
+
 from login import login_page
 from main import main_page
-
-
-st.set_page_config(page_title="In Supply", page_icon=":guardsman:")
 
 # Hide streamlit right deploy button and menu
 st.markdown("""

@@ -38,7 +38,7 @@ def title_menu(label, key):
     with st.container():
         menu_col1, menu_col2 = st.columns([7, 1])
         with menu_col1:
-            st.subheader(label)
+            st.markdown(f"### {label}")
         with menu_col2:
             if st.button("Logout",key=key):
                 logout()
