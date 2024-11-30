@@ -58,7 +58,7 @@ def get_matches(query,max_search):
 @st.cache_resource
 def load_search_engine():
     #load datafile
-    datafile = 'models/materials_classified.json'
+    datafile = 'models/materials.json'
     # Initialize the search engine and return it
     # supported models: 'sentence_transformer' and 'bert'. Noted that bert performs poorly, code commented out, need a spike.
     return search.SemanticSearch(data_file=datafile, model_type='sentence_transformer')
