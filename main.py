@@ -71,13 +71,14 @@ search_engine = load_search_engine()
 
 # Main App
 def main_page():
-    tab1, tab2, tab3 = st.tabs(["Search", "Wizard", "Settings"])
+    title_menu("", "pri_logout_but")
+    tab1, tab2, tab3, tab4 = st.tabs(["Search", "Wizard", "Settings", "Help"])
     # Set the value if it hasn't been initialized before
     if "max_search" not in st.session_state:
         update_max_search(5) #default to 5
 
-    with tab1:
-        title_menu('Cognitive Search','but_logout_cs')
+    with tab1:        
+        st.subheader('Cognitive Search')
         st.write("\n")
         st.write("\n")
         #material_state, service_state = toggle_component("Material", "Service")
@@ -98,7 +99,7 @@ def main_page():
             
     # Batch processing via file upload
     with tab2:
-        title_menu('Excel Wizard','but_logout_wz')
+        st.subheader('Excel Wizard')
         st.text("Upload an Excel file to bulk search for inventory items following the steps below.")
         st.write("&nbsp;")
         st.markdown("##### Step 1: Upload file")
@@ -148,8 +149,6 @@ def main_page():
                     if selection:
                         df.at[index, 'material_number'] = selection['material_number']
                     
-
-                
                 # Display editable dataframe
                 st.write("\n")
                 st.markdown("##### Step 3: Review output")
@@ -176,12 +175,12 @@ def main_page():
         st.write("\n")
 
     with tab3:
-        title_menu('Your Preferences','but_logout_settings')
+        st.subheader('Your Preferences')
         new_max_search  = st.slider("Maximum search results", min_value=1, max_value=50, value=5)
         update_max_search(new_max_search)
-        st.write("\n")
-        st.write("\n")
-        st.write("\n")
+
+    with tab4:
+        st.subheader('Help')
         with st.container(border=True):
             st.markdown("##### Questions? Ideas? Random Thoughts? We’re Listening!")
             st.markdown("Got a question or an idea that’s absolutely genius? We bet you do! Send us an [email](mailto:insupply@htx.ht.gov.sg), and we’ll get back to you as soon as we finish our coffee &#9749;", unsafe_allow_html=True)
