@@ -58,7 +58,7 @@ def get_matches(query,max_search):
 @st.cache_resource
 def load_search_engine():
     #load datafile
-    datafile = 'models/materials.json'
+    datafile = 'models/materials_classified.json'
     # Initialize the search engine and return it
     # supported models: 'sentence_transformer' and 'bert'. Noted that bert performs poorly, code commented out, need a spike.
     return search.SemanticSearch(data_file=datafile, model_type='sentence_transformer')
@@ -184,3 +184,7 @@ def main_page():
         with st.container(border=True):
             st.markdown("##### Questions? Ideas? Random Thoughts? We’re Listening!")
             st.markdown("Got a question or an idea that’s absolutely genius? We bet you do! Send us an [email](mailto:insupply@htx.ht.gov.sg), and we’ll get back to you as soon as we finish our coffee &#9749;", unsafe_allow_html=True)
+
+# directly execute main.py to skip login
+if __name__ == "__main__":
+    main_page()

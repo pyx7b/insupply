@@ -2,7 +2,10 @@ import streamlit as st
 from login import login_page
 from main import main_page
 
-# High streamlit right deploy button and menu
+
+st.set_page_config(page_title="In Supply", page_icon=":guardsman:")
+
+# Hide streamlit right deploy button and menu
 st.markdown("""
 <style>
     .stAppToolbar{
@@ -11,9 +14,6 @@ st.markdown("""
 </style>    
 """, unsafe_allow_html=True)
 
-#st.markdown("""
-#    <h1 style="text-align: center; font-weight: normal; font-size: 32px;"><b>In</b> Supply</h1><br/>
-#""", unsafe_allow_html=True)
 
 # If not initialise, initialise to isLogin to False
 if 'isLogin' not in st.session_state:
