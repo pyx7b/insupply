@@ -30,6 +30,13 @@ Run steamlit:
 ```
 streamlit run app.py
 ```
+
+## Run locally in Docker
+```
+docker build -t materialmaster .
+docker run -p 8501:8501 materialmaster
+```
+
 ## About the App
 1. There are 3 main streamlit pages:
 - app.py: The primary application
