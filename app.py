@@ -9,6 +9,10 @@ st.markdown("""
         display: none;
     }
 </style>
+            
+<footer style="text-align:center;">
+    <p>A project by Ng Pan Yong @pyx7b</p>
+</footer>
 """, unsafe_allow_html=True)
 
 # If not initialise, initialise to isLogin to False
